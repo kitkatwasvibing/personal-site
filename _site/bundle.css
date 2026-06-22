@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'tfmovie';
+    src: url('../assets/fonts/tfmovie.ttf') format('truetype');
+}
+
+body{
+    margin: 0;
+    text-align: center;
+    background-image: url(../assets/backgroundtile.gif);
+    background-repeat: repeat;
+    height: 90vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 5em 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'tfmovie', sans-serif;
+}
+
+header{
+    background-image: url(../assets/backgroundheader.jpg);
+    background-repeat: repeat;
+    grid-area: 1 / 1 / 2 / 4;
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
+aside{
+    background-image: url(../assets/backgroundaside.gif);
+    background-repeat: repeat;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.left{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+main{
+    background-image: url(../assets/backgroundtext.gif);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 100%;
+    grid-area: 2 / 2 / 3 / 3;
+
+    h1{
+        margin-bottom: 0;
+    }
+
+    .mypic{
+        width: 250px;
+        height: auto;
+
+        --s: 20px;
+        --w: 300px;
+  
+        width: round(var(--w),4*var(--s)); 
+        aspect-ratio: 1;
+        padding: var(--s);
+        border: var(--s) solid #0000;
+        box-sizing: border-box;
+        background: conic-gradient(#a252cd,#4eaa74,#b252cd) border-box;
+        border-radius: calc(3.5*var(--s)); 
+        mask: 
+            radial-gradient(calc(sqrt(2)*var(--s)),#000 calc(100% - 1px),#0000),
+            conic-gradient(#000 0 0) content-box,
+            radial-gradient(calc(sqrt(2)*var(--s)),#0000 100%,#000 calc(100% + 1px)) 
+            var(--s) var(--s) padding-box;
+            mask-size: calc(var(--s)*4) calc(var(--s)*4);
+    }
+
+    .divider{
+        width: 100%;
+    }
+
+    ul{
+        li{
+            text-align: start;
+        }
+    }
+}
+
+.right{
+    grid-area: 2 / 3 / 3 / 4;
+}
