@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'tfmovie';
+    src: url('../assets/fonts/tfmovie.ttf') format('truetype');
+}
+
 body{
     margin: 0;
     text-align: center;
@@ -10,6 +15,10 @@ body{
     grid-template-rows: 5em 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 15px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'tfmovie', sans-serif;
 }
 
 header{
