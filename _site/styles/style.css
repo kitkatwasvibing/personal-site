@@ -98,3 +98,19 @@ main{
 .right{
     grid-area: 2 / 3 / 3 / 4;
 }
+
+::-webkit-scrollbar {
+width:16px; height:16px;}  
+::-webkit-scrollbar-track { 
+background-color: #F7F5EE;}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/CKou08s.png);
+border-top: 1px solid #BBCDF5; border-bottom: 1px solid #7C9FD3;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/ObVjKL6.png);
+width: 16px; height: 17px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/1879VtO.png);
+width: 16px; height: 17px;}
