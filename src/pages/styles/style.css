@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'tfmovie';
+    src: url('../assets/fonts/tfmovie.ttf') format('truetype');
+}
+
+body{
+    margin: 0;
+    text-align: center;
+    background-image: url(../assets/backgroundtile.gif);
+    background-repeat: repeat;
+    height: 90vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 5em 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'tfmovie', sans-serif;
+}
+
+header{
+    background-image: url(../assets/backgroundheader.jpg);
+    background-repeat: repeat;
+    grid-area: 1 / 1 / 2 / 4;
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
+aside{
+    background-image: url(../assets/backgroundaside.gif);
+    background-repeat: repeat;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.left{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+main{
+    background-image: url(../assets/backgroundtext.gif);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 100%;
+    grid-area: 2 / 2 / 3 / 3;
+
+    h1{
+        margin-bottom: 0;
+    }
+
+    .mypic{
+        width: 250px;
+        height: auto;
+
+        --s: 20px;
+        --w: 300px;
+  
+        width: round(var(--w),4*var(--s)); 
+        aspect-ratio: 1;
+        padding: var(--s);
+        border: var(--s) solid #0000;
+        box-sizing: border-box;
+        background: conic-gradient(#a252cd,#4eaa74,#b252cd) border-box;
+        border-radius: calc(3.5*var(--s)); 
+        mask: 
+            radial-gradient(calc(sqrt(2)*var(--s)),#000 calc(100% - 1px),#0000),
+            conic-gradient(#000 0 0) content-box,
+            radial-gradient(calc(sqrt(2)*var(--s)),#0000 100%,#000 calc(100% + 1px)) 
+            var(--s) var(--s) padding-box;
+            mask-size: calc(var(--s)*4) calc(var(--s)*4);
+    }
+    
+    .divider{
+        width: 100%;
+    }
+
+    ul{
+        li{
+            text-align: start;
+        }
+    }
+}
+
+.right{
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+::-webkit-scrollbar {
+width:16px; height:16px;}  
+::-webkit-scrollbar-track { 
+background-color: #F7F5EE;}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/CKou08s.png);
+border-top: 1px solid #BBCDF5; border-bottom: 1px solid #7C9FD3;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/ObVjKL6.png);
+width: 16px; height: 17px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/1879VtO.png);
+width: 16px; height: 17px;}
+
+    @keyframes flicker {
+        0% {
+            opacity: 0.27861;
+        }
+        5% {
+            opacity: 0.34769;
+        }
+        10% {
+            opacity: 0.23604;
+        }
+        15% {
+            opacity: 0.90626;
+        }
+        20% {
+            opacity: 0.18128;
+        }
+        25% {
+            opacity: 0.83891;
+        }
+        30% {
+            opacity: 0.65583;
+        }
+        35% {
+            opacity: 0.67807;
+        }
+        40% {
+            opacity: 0.26559;
+        }
+        45% {
+            opacity: 0.84693;
+        }
+        50% {
+            opacity: 0.96019;
+        }
+        55% {
+            opacity: 0.08594;
+        }
+        60% {
+            opacity: 0.20313;
+        }
+        65% {
+            opacity: 0.71988;
+        }
+        70% {
+            opacity: 0.53455;
+        }
+        75% {
+            opacity: 0.37288;
+        }
+        80% {
+            opacity: 0.71428;
+        }
+        85% {
+            opacity: 0.70419;
+        }
+        90% {
+            opacity: 0.7003;
+        }
+        95% {
+            opacity: 0.36108;
+        }
+        100% {
+            opacity: 0.24387;
+        }
+    }
+
+        main::after{
+            animation: none;
+        }
+
+        main::before{
+            animation: none;
+        }    
+
+@media (prefers-reduced-motion: no-preference){
+    main::after {
+        z-index: 2;
+        pointer-events: none;
+        animation: flicker 0.15s infinite;
+    }
+
+    main::before{
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        z-index: 2;
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+    }
+}
